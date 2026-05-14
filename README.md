@@ -1,4 +1,5 @@
 Projeto-integrado-SEB-LPR
+
 Sistema embarcado desenvolvido para controle de presença em sala de aula, com autenticação por senha, configuração de limite de alunos e gerenciamento de entradas 
 e saídas em tempo real, tudo controlado por 4 botões físicos e exibido em um display.
 

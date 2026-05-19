@@ -67,6 +67,7 @@ DesenharBarraTopo() — Renderiza barra de progresso visual no topo do display
 
 
 Decisões Tomadas e Arquitetura de Software:
+
 Máquina de Estados (switch/case): O loop principal gerencia o fluxo por variáveis de controle (etapa). Isso força o sistema a seguir a ordem exata do projeto (Senha -> Limite -> Controle -> Relatório), impedindo o avanço sem validação.
 
 Uso de Macros (#define): Substituição de comandos extensos da HAL (como HAL_GPIO_ReadPin) por termos curtos (BCima, BEsquerda, L1). Isso evitou poluição visual e facilitou a escrita da lógica de botões e LEDs.

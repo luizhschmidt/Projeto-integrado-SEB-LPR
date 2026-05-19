@@ -79,3 +79,9 @@ Controle Total por Botões Físicos: Toda a interação do sistema (navegação 
 Cálculo Proporcional da Barra: A função DesenharBarraTopo usa uma regra de três simples para preencher a barra de progresso baseada no limite máximo de alunos. Há uma trava para evitar divisão por zero e uma lógica para mudar a cor de verde para vermelho quando a capacidade é atingida.
 
 Travamento por Segurança (while(1)): No bloqueio por erro de senha e na tela final de relatório, o código entra em loop infinito estático. Isso impede que o sistema continue recebendo comandos ou sofra alterações acidentais após o fim da aula ou violação de acesso.
+
+
+
+Link do video:
+
+https://youtu.be/utVKLg_h0vM

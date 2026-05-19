@@ -63,3 +63,18 @@ ConfigurarLimiteAlunos() — Loop de configuração do número máximo de alunos
 ExecutarControleAula() — Lógica principal de entradas, saídas e retornos
 EncerrarAula()  — Exibe relatório, pisca LEDs e trava o sistema
 DesenharBarraTopo() — Renderiza barra de progresso visual no topo do display
+
+
+
+Decisões Tomadas e Arquitetura de Software:
+Máquina de Estados (switch/case): O loop principal gerencia o fluxo por variáveis de controle (etapa). Isso força o sistema a seguir a ordem exata do projeto (Senha -> Limite -> Controle -> Relatório), impedindo o avanço sem validação.
+
+Uso de Macros (#define): Substituição de comandos extensos da HAL (como HAL_GPIO_ReadPin) por termos curtos (BCima, BEsquerda, L1). Isso evitou poluição visual e facilitou a escrita da lógica de botões e LEDs.
+
+Variáveis e Buffers Locais: A criação de arrays de texto (buffers) para escrita no display foi feita estritamente dentro de cada função. Isso economizou a memória RAM do microcontrolador e evitou o uso desnecessário de variáveis globais.
+
+Controle Total por Botões Físicos: Toda a interação do sistema (navegação de menus, incremento de valores, registro de alunos e confirmações) foi concentrada nos 4 botões direcionais mapeados via GPIO, tornando o projeto um sistema embarcado autônomo e independente de periféricos externos de comunicação.
+
+Cálculo Proporcional da Barra: A função DesenharBarraTopo usa uma regra de três simples para preencher a barra de progresso baseada no limite máximo de alunos. Há uma trava para evitar divisão por zero e uma lógica para mudar a cor de verde para vermelho quando a capacidade é atingida.
+
+Travamento por Segurança (while(1)): No bloqueio por erro de senha e na tela final de relatório, o código entra em loop infinito estático. Isso impede que o sistema continue recebendo comandos ou sofra alterações acidentais após o fim da aula ou violação de acesso.

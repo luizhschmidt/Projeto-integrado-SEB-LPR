@@ -55,13 +55,21 @@ Após isso, os LEDs piscam como sinalização de encerramento e o sistema trava,
 
 
 ESTRUTURA DO CÓDIGO:
+
 main() — Inicialização, tela de espera e loop principal (switch/case por etapa)
-GerarExibirSenha() — Gera senha aleatória com rand() e envia via printf (UART)
+
+GerarExibirSenha() — Gera senha aleatória com rand()
+
 ProcessarEntradaSenha() — Leitura dos botões para entrada dos 3 dígitos da senha
+
 ValidarAcesso() — Compara entrada com senha gerada; controla tentativas e bloqueio
+
 ConfigurarLimiteAlunos() — Loop de configuração do número máximo de alunos
+
 ExecutarControleAula() — Lógica principal de entradas, saídas e retornos
+
 EncerrarAula()  — Exibe relatório, pisca LEDs e trava o sistema
+
 DesenharBarraTopo() — Renderiza barra de progresso visual no topo do display
 
 
